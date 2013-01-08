@@ -6,7 +6,8 @@ class riak {
         $user="") {
 
     exec { $name:
-        command => "/usr/bin/wget --content-disposition ${site}/${name}",
+        command => "/usr/bin/wget --output-document ${cwd}/${creates} ${site}/${name}",
+        unless => "/usr/bin/test -f ${cwd}/${creates}",
         cwd => $cwd,
         creates => "${cwd}/${creates}",
         user => $user,
