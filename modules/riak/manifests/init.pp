@@ -15,7 +15,7 @@ class riak {
   }
 
   download{ "riak/CURRENT/debian/6/riak_1.2.1-1_amd64.deb":
-    creates => "riak_1.1.2-1_amd64.deb",
+    creates => "riak_1.2.1-1_amd64.deb",
     site => "http://s3.amazonaws.com/downloads.basho.com",
     cwd => "/tmp",
     user => "vagrant"
