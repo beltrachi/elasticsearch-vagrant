@@ -13,8 +13,7 @@ class riak {
         user => $user,
     }
   }
-
-  download{ "riak/CURRENT/debian/6/riak_1.2.1-1_amd64.deb":
+  download{ "riak/1.2/1.2.1/debian/6/riak_1.2.1-1_amd64.deb":
     creates => "riak_1.2.1-1_amd64.deb",
     site => "http://s3.amazonaws.com/downloads.basho.com",
     cwd => "/tmp",
@@ -55,5 +54,5 @@ class riak {
     ensure => present
   }
 
-  Download["riak/CURRENT/debian/6/riak_1.2.1-1_amd64.deb"] -> Package["libssl0.9.8"] -> Exec["install"] -> Service["riak"]
+  Download["riak/1.2/1.2.1/debian/6/riak_1.2.1-1_amd64.deb"] -> Package["libssl0.9.8"] -> Exec["install"] -> Service["riak"]
 }
