@@ -1,5 +1,5 @@
 class elasticsearch::params {
-  $version = "0.19.8"
+  $version = "0.19.9"
   $java_package = "openjdk-6-jre-headless"
   $dbdir = "/var/lib/elasticsearch"
   $logdir = "/var/log/elasticsearch"
