@@ -1,6 +1,6 @@
 group{ 'puppet': ensure  => present }
 
-node 'elasticsearch'{
+node 'elastic1' {
   Package {
     require  => Exec['apt-get_update']
   }
@@ -9,20 +9,5 @@ node 'elasticsearch'{
     command     => '/usr/bin/apt-get update',
   }
 
-  include elasticsearch
-}
-
-node 'mybox'{
-  Package {
-    require  => Exec['apt-get_update']
-  }
-
-  exec { 'apt-get_update':
-    command     => '/usr/bin/apt-get update',
-  }
-
-#  include storm::nimbus
-  include redis
-  include riak
   include elasticsearch
 }

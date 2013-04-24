@@ -1,9 +1,9 @@
-Creates a Ubuntu VM with Riak, elasticsearch, Redis and optionally Storm. By default uses 1GB of memory and forwards all the relevant ports.
+Creates a Ubuntu VM with elasticsearch. By default uses 1GB of memory.
 
 Requires:
 
 * VirtualBox
-* Vagrant (ruby gem)
+* Vagrant 
 
 Basic usage:
 

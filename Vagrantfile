@@ -1,23 +1,13 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-
 Vagrant::Config.run do |config|
-  config.vm.define :mybox do |mybox|
+  config.vm.define :elastic1 do |mybox|
     mybox.vm.box = "precise64"
     mybox.vm.box_url = "http://files.vagrantup.com/precise64.box"
-    mybox.vm.provision :puppet, :module_path => "modules", :options => ["--debug"], :facter => { "riak_node_name" => "riak@33.33.33.33" }
-    mybox.vm.host_name = 'mybox'
-
-    # riak ports
-    mybox.vm.forward_port(8098, 8098)
-    mybox.vm.forward_port(8087, 8087)
-
-    # redis ports
-    mybox.vm.forward_port(6379, 6379)
-
+    mybox.vm.provision :puppet, :module_path => "modules", :options => ["--debug"]
+    mybox.vm.host_name = 'elastic1'
     mybox.vm.customize ["modifyvm", :id, "--memory", 1024]
     mybox.vm.network :hostonly, "33.33.33.33"
   end
-
 end
