@@ -63,7 +63,7 @@ class elasticsearch(
   }
 
   exec { 'get-elastic-pkg':
-    command => "/usr/bin/wget --output-document ${tmptarchive} http://download.elasticsearch.org/elasticsearch/elasticsearch/${tarchive}",
+    command => "/usr/bin/wget --output-document ${tmptarchive} https://download.elasticsearch.org/elasticsearch/elasticsearch/${tarchive}",
     unless  => "/usr/bin/test -f ${tmptarchive}",
   }
 
