@@ -1,4 +1,4 @@
-Creates a Ubuntu VM with elasticsearch. By default uses 1GB of memory.
+Creates a Ubuntu VM with elasticsearch. 
 
 Requires:
 
