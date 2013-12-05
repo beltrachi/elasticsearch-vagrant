@@ -9,5 +9,6 @@ Vagrant::Config.run do |config|
     mybox.vm.host_name = 'elastic1'
     mybox.vm.customize ["modifyvm", :id, "--memory", 512]
     mybox.vm.network :hostonly, "33.33.33.33"
+    mybox.vm.forward_port 9200, 9200
   end
 end
